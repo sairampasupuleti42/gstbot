@@ -1,0 +1,14 @@
+{
+    "name": "GST bot",
+    "author": "Sairam Pasupuleti",
+    "version": "1.0",
+    "description": "Calculate Goods and services tax (GST) with GST bot",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "<all_urls>"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
