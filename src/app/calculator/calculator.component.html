@@ -1,0 +1,20 @@
+<mat-card style="height: auto;width: 300px;padding:0">
+    <mat-card-content>
+        <p style="display: none;">Simplifying GST billing & invoices</p>
+        <mat-card>
+            <mat-card-title>{{calcFormObj?.title}}</mat-card-title>
+            <mat-card-content>
+                <!-- <form [formGroup]="calcForm" (ngSubmit)="calculate()" class="form"> -->
+                <div *ngFor="let field of calcFormObj.fields">
+                    <gb-input-field [formGroup]="calcForm" [field]="field" (submittedData)="submittedDataHandler($event)"></gb-input-field>
+                </div>
+
+                <div class="button">
+                    <button type="submit" class="btn" mat-button mat-raised-button color="accent" (click)="calculate()">Calculate</button>
+                </div>
+
+                <!-- </form> -->
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

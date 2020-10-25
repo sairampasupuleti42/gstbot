@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmitted($event)" class="form">
+    <div *ngIf="field.type=='TEXT'">
+        <mat-form-field class="form-element">
+            <input type="text" matInput [name]="field.id" [placeholder]="field.label" [formControl]="field.id" />
+        </mat-form-field>
+    </div>
+    <div *ngIf="field.type=='CURRENCY'">
+        <mat-form-field class="form-element">
+            <input type="text" matInput [name]="field.id" [placeholder]="field.label" />
+        </mat-form-field>
+    </div>
+    <div *ngIf="field.type=='DROPDOWN'">
+        <mat-form-field>
+            <mat-select [placeholder]="field.label" [formControl]="field.id">
+                <mat-option *ngFor="let dd of field.dropdownFields" [value]="field.value">
+                    {{dd.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+</form>
